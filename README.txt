@@ -7,7 +7,7 @@ ihpatch.txt is the patch against snapd, over the commit:
  Merge: b814491 5c25377
  Author: Pawel Stolowski <stolowski@gmail.com>
  Date:   Tue Sep 11 08:34:49 2018 +0200
-stefi-dev-repo is the full folder with server code, it has hardcodings.
+server is the full folder with server code, it has hardcodings.
 
 I used snap hidden commands like snap create-key, snap sign.
 
