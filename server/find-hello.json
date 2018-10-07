@@ -1,0 +1,155 @@
+{
+    "_embedded": {
+        "clickindex:package": [
+            {
+                "anon_download_url": "https://api.snapcraft.io/api/v1/snaps/download/MvjPhhWXWxEyruMxMpk2vhqKpqdyR9T9_2.snap",
+                "architecture": [
+                    "amd64"
+                ],
+                "binary_filesize": 4096,
+                "channel": "stable",
+                "common_ids": [],
+                "confinement": "strict",
+                "contact": "http://www.om26er.com/support",
+                "content": "application",
+                "description": "A snap to test publishing from command-line.rn",
+                "developer_id": "Wtpsanth6CVx0Hz9w8H6T9GOFChVky8l",
+                "developer_name": "Omer Akram",
+                "developer_validation": "unproven",
+                "download_sha3_384": "597cd14dfcfbd1991ff0a715b2578ffedbff50377f844dba6967a6c9a80226d580f233524de04fccea65824c0d0d1651",
+                "download_url": "https://api.snapcraft.io/api/v1/snaps/download/MvjPhhWXWxEyruMxMpk2vhqKpqdyR9T9_2.snap",
+                "epoch": "0",
+                "icon_url": "",
+                "last_updated": "2017-02-01T08:41:19.955334+00:00",
+                "license": "Proprietary",
+                "origin": "om26er",
+                "package_name": "hello-world-om26er",
+                "prices": {},
+                "private": false,
+                "publisher": "Omer Akram",
+                "ratings_average": 0.0,
+                "revision": 2,
+                "screenshot_urls": [],
+                "snap_id": "MvjPhhWXWxEyruMxMpk2vhqKpqdyR9T9",
+                "summary": "A great snap",
+                "support_url": "",
+                "title": "hello-world-om26er",
+                "version": "0.2"
+            },
+            {
+                "anon_download_url": "https://api.snapcraft.io/api/v1/snaps/download/buPKUD3TKqCOgLEjjHx5kSiCpIs5cMuQ_27.snap",
+                "architecture": [
+                    "all"
+                ],
+                "binary_filesize": 20480,
+                "channel": "stable",
+                "common_ids": [],
+                "confinement": "strict",
+                "contact": "mailto:snappy-devel@lists.ubuntu.com",
+                "content": "application",
+                "description": "This is a simple hello world example.",
+                "developer_id": "canonical",
+                "developer_name": "Canonical",
+                "developer_validation": "verified",
+                "download_sha3_384": "eed62063c04a8c3819eb71ce7d929cc8d743b43be9e7d86b397b6d61b66b0c3a684f3148a9dbe5821360ae32105c1bd9",
+                "download_url": "https://api.snapcraft.io/api/v1/snaps/download/buPKUD3TKqCOgLEjjHx5kSiCpIs5cMuQ_27.snap",
+                "epoch": "0",
+                "icon_url": "https://dashboard.snapcraft.io/site_media/appmedia/2015/03/hello.svg_NZLfWbh.png",
+                "last_updated": "2016-07-12T16:37:23.960632+00:00",
+                "license": "MIT",
+                "origin": "canonical",
+                "package_name": "hello-world",
+                "prices": {},
+                "private": false,
+                "publisher": "Canonical",
+                "ratings_average": 0.0,
+                "revision": 27,
+                "screenshot_urls": [
+                    "https://dashboard.snapcraft.io/site_media/appmedia/2018/06/Screenshot_from_2018-06-14_09-33-31.png"
+                ],
+                "snap_id": "buPKUD3TKqCOgLEjjHx5kSiCpIs5cMuQ",
+                "summary": "The 'hello-world' of snaps",
+                "support_url": "",
+                "title": "Hello World",
+                "version": "6.3"
+            },
+            {
+                "anon_download_url": "https://api.snapcraft.io/api/v1/snaps/download/OQg1NTeMWWR131OdO7XmSnmyNpy7piE2_1.snap",
+                "architecture": [
+                    "amd64"
+                ],
+                "binary_filesize": 4096,
+                "channel": "stable",
+                "common_ids": [],
+                "confinement": "classic",
+                "contact": "",
+                "content": "application",
+                "description": "Trivial snap for testing classic confinementn",
+                "developer_id": "canonical",
+                "developer_name": "Canonical",
+                "developer_validation": "verified",
+                "download_sha3_384": "da8a732ecbd29b91cc40c354b3cfb8a2dfa69144cba47bbf6512c2d739925d572a4ed439b77fe7b1d538929ad6341cb7",
+                "download_url": "https://api.snapcraft.io/api/v1/snaps/download/OQg1NTeMWWR131OdO7XmSnmyNpy7piE2_1.snap",
+                "epoch": "0",
+                "icon_url": "",
+                "last_updated": "2018-01-03T13:03:52.032028+00:00",
+                "license": "Proprietary",
+                "origin": "canonical",
+                "package_name": "test-snapd-hello-classic",
+                "prices": {},
+                "private": false,
+                "publisher": "Canonical",
+                "ratings_average": 0.0,
+                "revision": 1,
+                "screenshot_urls": [],
+                "snap_id": "OQg1NTeMWWR131OdO7XmSnmyNpy7piE2",
+                "summary": "A hello-world with classic confinement",
+                "support_url": "",
+                "title": "test-snapd-hello-classic",
+                "version": "1.0"
+            },
+            {
+                "anon_download_url": "https://api.snapcraft.io/api/v1/snaps/download/C5dNhzm9yryAvdNmZOgGAo74OioC3zSn_9.snap",
+                "architecture": [
+                    "amd64"
+                ],
+                "binary_filesize": 4096,
+                "channel": "stable",
+                "common_ids": [],
+                "confinement": "strict",
+                "contact": "",
+                "content": "application",
+                "description": "This is yet another hello-world clone ...",
+                "developer_id": "sO7TPbndbZ1UVDdmeHJpWIA4D1hcjWO7",
+                "developer_name": "Celso Providelo ud83eudd21",
+                "developer_validation": "unproven",
+                "download_sha3_384": "c4b21a8f0659eccf4416daa295ceb8bf14996393715bdd7a2237acdbe39d7e1d8f9600ab1ad87acd9adb8a8f83f1f0f4",
+                "download_url": "https://api.snapcraft.io/api/v1/snaps/download/C5dNhzm9yryAvdNmZOgGAo74OioC3zSn_9.snap",
+                "epoch": "0",
+                "icon_url": "https://dashboard.snapcraft.io/site_media/appmedia/2018/01/lhc.png",
+                "last_updated": "2017-06-19T19:08:49.632217+00:00",
+                "license": "Other Open Source",
+                "origin": "cprov",
+                "package_name": "hello-lhc",
+                "prices": {},
+                "private": false,
+                "publisher": "Celso Providelo ud83eudd21",
+                "ratings_average": 0.0,
+                "revision": 9,
+                "screenshot_urls": [
+                    "https://dashboard.snapcraft.io/site_media/appmedia/2018/04/snapcraft.png"
+                ],
+                "snap_id": "C5dNhzm9yryAvdNmZOgGAo74OioC3zSn",
+                "summary": "Hello world application for LHCu2602",
+                "support_url": "",
+                "title": "hello-lhc",
+                "version": "1.0"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "http://api.snapcraft.io/api/v1/snaps/search?confinement=strict%2Cclassic&fields=anon_download_url%2Carchitecture%2Cchannel%2Cdownload_sha3_384%2Csummary%2Cdescription%2Cbinary_filesize%2Cdownload_url%2Cepoch%2Cicon_url%2Clast_updated%2Cpackage_name%2Cprices%2Cpublisher%2Cratings_average%2Crevision%2Cscreenshot_urls%2Csnap_id%2Clicense%2Cbase%2Csupport_url%2Ccontact%2Ctitle%2Ccontent%2Cversion%2Corigin%2Cdeveloper_id%2Cdeveloper_name%2Cdeveloper_validation%2Cprivate%2Cconfinement%2Ccommon_ids&q=hello-world"
+        }
+    }
+}

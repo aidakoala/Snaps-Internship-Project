@@ -1,0 +1,155 @@
+{
+    "context": [
+        {
+            "snap-id": "J60k4JY0HppjwOjW8dZdYc8obXKxujRu",
+            "instance-key": "J60k4JY0HppjwOjW8dZdYc8obXKxujRu",
+            "revision": 7792,
+            "tracking-channel": "stable",
+            "refreshed-date": "2018-07-16T14:00:55.76138796+03:00"
+        },
+        {
+            "snap-id": "vMTKRaLjnOJQetI78HjntT37VuoyssFE",
+            "instance-key": "vMTKRaLjnOJQetI78HjntT37VuoyssFE",
+            "revision": 1594,
+            "tracking-channel": "stable",
+            "refreshed-date": "2018-07-02T12:07:52.453005+03:00"
+        },
+        {
+            "snap-id": "DVAzG29Avl1Cn5s1nLXGzyQ0vi9v87Jw",
+            "instance-key": "DVAzG29Avl1Cn5s1nLXGzyQ0vi9v87Jw",
+            "revision": 243,
+            "tracking-channel": "stable",
+            "refreshed-date": "2018-07-11T15:33:55.442531+03:00"
+        },
+        {
+            "snap-id": "99T7MUlRhtI3U0QFgl5mXXESAiSwt776",
+            "instance-key": "99T7MUlRhtI3U0QFgl5mXXESAiSwt776",
+            "revision": 4917,
+            "tracking-channel": "stable",
+            "refreshed-date": "2018-07-20T16:37:23.080200956+03:00"
+        },
+        {
+            "snap-id": "buPKUD3TKqCOgLEjjHx5kSiCpIs5cMuQ",
+            "instance-key": "buPKUD3TKqCOgLEjjHx5kSiCpIs5cMuQ",
+            "revision": 27,
+            "tracking-channel": "stable",
+            "refreshed-date": "2018-07-17T11:05:15.609381915+03:00"
+        },
+        {
+            "snap-id": "op76VXJUbTyfe4hHtC3apVYfnvN1FdIA",
+            "instance-key": "op76VXJUbTyfe4hHtC3apVYfnvN1FdIA",
+            "revision": 2,
+            "tracking-channel": "stable",
+            "refreshed-date": "2018-07-23T14:43:20.749946547+03:00"
+        },
+        {
+            "snap-id": "JUJH91Ved74jd4ZgJCpzMBtYbPOzTlsD",
+            "instance-key": "JUJH91Ved74jd4ZgJCpzMBtYbPOzTlsD",
+            "revision": 7,
+            "tracking-channel": "stable",
+            "refreshed-date": "2018-07-02T12:01:29.361005+03:00"
+        },
+        {
+            "snap-id": "qIS5GDRcA6H7dsL0IfCTwGFt2wUukxy4",
+            "instance-key": "qIS5GDRcA6H7dsL0IfCTwGFt2wUukxy4",
+            "revision": 1,
+            "tracking-channel": "beta",
+            "refreshed-date": "2018-07-09T12:10:10.185154+03:00"
+        }
+    ],
+    "actions": [
+        {
+            "action": "install",
+            "instance-key": "install-1",
+            "name": "ssh",
+            "channel": "stable"
+        }
+    ],
+    "fields": [
+        "architectures",
+        "base",
+        "confinement",
+        "contact",
+        "created-at",
+        "description",
+        "download",
+        "epoch",
+        "license",
+        "name",
+        "prices",
+        "private",
+        "publisher",
+        "revision",
+        "snap-id",
+        "snap-yaml",
+        "summary",
+        "title",
+        "type",
+        "version",
+        "media",
+        "common-ids"
+    ]
+}
+
+{
+    "error-list": [],
+    "results": [
+        {
+            "effective-channel": "stable",
+            "instance-key": "install-1",
+            "name": "htop",
+            "result": "install",
+            "snap": {
+                "architectures": [
+                    "amd64"
+                ],
+                "base": null,
+                "common-ids": [],
+                "confinement": "strict",
+                "contact": "https://github.com/maxiberta/htop-snap/issues",
+                "created-at": "2018-06-05T00:12:12.497016+00:00",
+                "description": "htop is an ncurses-based process viewer similar to top, but it\\nallows one to scroll the list vertically and horizontally to see\\nall processes and their full command lines. Tasks related to\\nprocesses (killing, renicing) can be done without entering their PIDs.\\n\\nOnce installed, this snap needs manually connecting to some plugs:\\n  `sudo snap connect htop:mount-observe`\\n  `sudo snap connect htop:process-control`\\n  `sudo snap connect htop:system-observe`\\n",
+                "download": {
+                    "deltas": [],
+                    "sha3-384": "5c973100a7bab3987fe4570cfb4ca2f193c88a185ff08c43c5dd534e1143190ea862d9c6fbbbff72793cf7d8937fc31b",
+                    "size": 4882432,
+                    "url": "https://api.snapcraft.io/api/v1/snaps/download/hJmReLmgXSUj4SF7WhyTVRV6IzUa4QUZ_381.snap"
+                },
+                "epoch": {
+                    "read": [
+                        0
+                    ],
+                    "write": [
+                        0
+                    ]
+                },
+                "license": "GPL-2.0",
+                "media": [
+                    {
+                        "height": null,
+                        "type": "screenshot",
+                        "url": "https://dashboard.snapcraft.io/site_media/appmedia/2016/05/htop-2.0.png",
+                        "width": null
+                    }
+                ],
+                "name": "htop",
+                "prices": {},
+                "private": false,
+                "publisher": {
+                    "display-name": "Maximiliano Bertacchini",
+                    "id": "cutKqT3IpQGFMcTP19h89p5eCrxsaK0U",
+                    "username": "maxiberta",
+                    "validation": "unproven"
+                },
+                "revision": 381,
+                "snap-id": "hJmReLmgXSUj4SF7WhyTVRV6IzUa4QUZ",
+                "snap-yaml": "name: htop\\nversion: 2.2.0\\nsummary: Interactive processes viewer\\ndescription: |\\n  htop is an ncurses-based process viewer similar to top, but it\\n  allows one to scroll the list vertically and horizontally to see\\n  all processes and their full command lines. Tasks related to\\n  processes (killing, renicing) can be done without entering their PIDs.\\n\\n  Once installed, this snap needs manually connecting to some plugs:\\n    `sudo snap connect htop:mount-observe`\\n    `sudo snap connect htop:process-control`\\n    `sudo snap connect htop:system-observe`\\narchitectures:\\n- amd64\\nconfinement: strict\\ngrade: stable\\napps:\\n  htop:\\n    command: command-htop.wrapper\\n    plugs:\\n    - mount-observe\\n    - process-control\\n    - system-observe\\n",
+                "summary": "Interactive processes viewer",
+                "title": "htop",
+                "type": "app",
+                "version": "2.2.0"
+            },
+            "snap-id": "hJmReLmgXSUj4SF7WhyTVRV6IzUa4QUZ"
+        }
+    ]
+}

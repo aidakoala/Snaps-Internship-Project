@@ -1,0 +1,1 @@
+2018/07/17 11:03:21.523169 daemon.go:272: DEBUG: pid=9487;uid=1000;socket=/run/snapd.socket;@ GET /v2/snaps 9.380688ms 200

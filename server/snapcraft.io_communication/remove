@@ -1,0 +1,10 @@
+2018/07/17 11:04:12.732753 daemon.go:272: DEBUG: pid=9639;uid=1000;socket=/run/snapd.socket;@ GET /v2/snaps 19.316437ms 200
+2018/07/17 11:04:16.917292 daemon.go:272: DEBUG: pid=9650;uid=1000;socket=/run/snapd.socket;@ POST /v2/snaps/hello-world 12.503037ms 202
+2018/07/17 11:04:16.917949 taskrunner.go:403: DEBUG: Running task 459 on Do: Stop snap "hello-world" services
+2018/07/17 11:04:16.925234 taskrunner.go:403: DEBUG: Running task 458 on Do: Run remove hook of "hello-world" snap if present
+2018/07/17 11:04:16.933494 taskrunner.go:403: DEBUG: Running task 460 on Do: Remove aliases for snap "hello-world"
+2018/07/17 11:04:16.950002 taskrunner.go:403: DEBUG: Running task 461 on Do: Make snap "hello-world" unavailable to the system
+2018/07/17 11:04:16.963150 taskrunner.go:403: DEBUG: Running task 462 on Do: Remove security profile for snap "hello-world" (27)
+2018/07/17 11:04:16.977133 taskrunner.go:403: DEBUG: Running task 463 on Do: Remove data for snap "hello-world" (27)
+2018/07/17 11:04:16.984656 taskrunner.go:403: DEBUG: Running task 464 on Do: Remove snap "hello-world" (27) from the system
+2018/07/17 11:04:17.505732 taskrunner.go:403: DEBUG: Running task 465 on Do: Discard interface connections for snap "hello-world" (27)
