@@ -1,0 +1,50 @@
+{
+    "architectures": [
+        "amd64"
+    ],
+    "base": null,
+    "common-ids": [],
+    "confinement": "strict",
+    "contact": "Ixia",
+    "created-at": "2018-07-26T08:46:52+00:00",
+    "description": "ssh description",
+    "download": {
+        "deltas": [],
+        "sha3-384": "47132d352969c81e87a671b0fed31c30f27bd69d877a00b9cc67eac58fd560f54a9b2762a240b5d85647fa6ebc90f7cf",
+        "size": 4882432,
+        "url": "http://localhost:9090/api/v1/snaps/download/opensshd_0.1_amd64.snap"
+    },
+    "epoch": {
+        "read": [
+            0
+        ],
+        "write": [
+            0
+        ]
+    },
+    "license": "GPL-2.0",
+    "media": [
+        {
+            "height": null,
+            "type": "screenshot",
+            "url": "https://dashboard.snapcraft.io/site_media/appmedia/2016/05/htop-2.0.png",
+            "width": null
+        }
+    ],
+    "name": "opensshd",
+    "prices": {},
+    "private": false,
+    "publisher": {
+        "display-name": "Ixia",
+        "id": "",
+        "username": "aida.manole",
+        "validation": "unproven"
+    },
+    "revision": 1,
+    "snap-id": "RmBXKl6HO6YOC2DE4G2q1JzWImC04EUy",
+    "snap-yaml": "",
+    "summary": "",
+    "title": "opensshd",
+    "type": "app",
+    "version": "2.2.0"
+}

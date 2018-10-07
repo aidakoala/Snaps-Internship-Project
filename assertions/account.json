@@ -1,0 +1,10 @@
+{
+    "type": "account",
+    "authority-id": "keysight",
+    "revision": "14",
+    "account-id": "keysight",
+    "display-name": "Keysight",
+    "username": "keysight",
+    "validation": "unproven",
+    "timestamp": "2018-09-12T10:23:51+00:00"
+}

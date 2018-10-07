@@ -1,0 +1,271 @@
+diff --git a/asserts/asserts.go b/asserts/asserts.go
+index 9ae1ff2..0dda7ed 100644
+--- a/asserts/asserts.go
++++ b/asserts/asserts.go
+@@ -905,9 +905,9 @@ func assembleAndSign(assertType *AssertionType, headers map[string]interface{},
+ 
+ // SignWithoutAuthority assembles an assertion without a set authority with the provided information and signs it with the given private key.
+ func SignWithoutAuthority(assertType *AssertionType, headers map[string]interface{}, body []byte, privKey PrivateKey) (Assertion, error) {
+-	if assertType.flags&noAuthority == 0 {
+-		return nil, fmt.Errorf("cannot sign assertions needing a definite authority with SignWithoutAuthority")
+-	}
++	//if assertType.flags&noAuthority == 0 {
++	//	return nil, fmt.Errorf("cannot sign assertions needing a definite authority with SignWithoutAuthority")
++	//}
+ 	return assembleAndSign(assertType, headers, body, privKey)
+ }
+ 
+diff --git a/asserts/sysdb/trusted.go b/asserts/sysdb/trusted.go
+index 9cd7964..95c5d3b 100644
+--- a/asserts/sysdb/trusted.go
++++ b/asserts/sysdb/trusted.go
+@@ -27,6 +27,28 @@ import (
+ )
+ 
+ const (
++	encodedKeysightAccount = `type: account
++authority-id: keysight
++revision: 14
++account-id: keysight
++display-name: Keysight
++timestamp: 2018-09-12T10:23:51+00:00
++username: keysight
++validation: unproven
++sign-key-sha3-384: bCEJWw5FZgRZDFuZhPAdPgo1lZgljyAPlEOcVD3UCWzldtB4qc8yMtKoMgejdXEY
++
++AcLBXAQAAQoABgUCW5jVPQAKCRCgMssgMDM9MYNvEACULGd26WEvh3cSAWQB3x0qsgdW6XiLnc2j
++SLXUgsSGJD3Y5HXDH3TXG4oubrDwBq7tSYXXAwwcd23ypoHNDfe8b7j4OF3mbIaqbobXrYBB2+uv
++WXHvMIsKVD2pSjSXdUAv9ytgodt0OErOMod+aG9v3mKpp5gtS1aS8Jkz2muPfQxyo3riTJ+F2E9q
++WK5GdUlvzr1hD/jFI+HNp40fn44Qm5jZ2FEN4RBwyGDTGzHEclP2jcwn1vVac4Y0kriqjbzF9ybV
++HVtAv0iw4sruu51izzmRKH2npDLMu3tYwkVtj4K+7tvzabcJEE3PJQeSehWpg65J8CqLqPoCCSg1
++OXbq+CWJZV7bMZ0ga8LMaK83C0kwd90xBD3YH/zjDCpmHRk5cdoG8dmrDXLqeEKsVjGBoU3R6yUG
++MALgmQeOlDvre37cLyGmGvIFqxbNqSiW6jCkL+cpOt50paaaJyyQwZBnHAXfh2z7tSJ79TgcgiAO
++2DOMTRTocSIZZ3WQ5swiXLANB96sGJKR14mPXpvEBCYYiaixbdvlsMc1GV/CV8k7dzZB60QlSyKI
++bT0TmNJ3rABiR51u023TqzO5JTCkObDb3ouqNZ2HaJ0gGik+xNLUf3hBiMS3bGDD6EZRCCziv++0
++7TRHuUr+2j5aj/T761PVeoS+fStImGmSfJjzivCn4Q==
++`
++
+ 	encodedCanonicalAccount = `type: account
+ authority-id: canonical
+ account-id: canonical
+@@ -107,6 +129,38 @@ pTnYkmx7XGPF7Ahb7Ov0/0FE2Lx3JZXSEKeW+VrCcpYQOY++t67b+jf0AV4rZExcLFJzP6MPMimP
+ ZCd383NzlzkXK+vAdvTi40HPiM9FYOp6g8JTs5TTdx2/qs/SWFC8AkahIQmH0IpFBJep2JKl2kyr
+ FZMvASkHA9bR/UuXDvbMzsUmT/xnERZosQaZgFEO
+ `
++encodedKeysightRootAccountKey = `type: account-key
++authority-id: keysight
++public-key-sha3-384: bCEJWw5FZgRZDFuZhPAdPgo1lZgljyAPlEOcVD3UCWzldtB4qc8yMtKoMgejdXEY
++account-id: keysight
++name: ihey
++since: 2018-09-12T08:36:11Z
++body-length: 717
++sign-key-sha3-384: bCEJWw5FZgRZDFuZhPAdPgo1lZgljyAPlEOcVD3UCWzldtB4qc8yMtKoMgejdXEY
++
++AcbBTQRWhcGAARAAqMCnJ31z4NhApPc0JZXkhcjf2xZcKmrS2mWuP4UQj5ZzjX6Vv8AcbbjBblH+
++3LWkeDMkOQLzC/JnlrcSZhpJtvYgCIwHWE6gEUTZ1q5AnK5xUR9MliZ6TndjIswjIT35qsHzOXzA
++fhrxYa1KuZoi/yJrTkVpnAqxIgWZjVwm8InpTXOZ+RpyAXLb5RE8SwDyzDNl4bNJRL3PY6Vec2xP
++q8Ykq6h3fxALjwNXVxCtM0LPIpeQNzA70bTWjKpx+cGPjbRdeXaIpqfVoF60ovYQV7rjDfY6L/At
++2uRun0zIidJA9w7rOGrsVGyA6+ZiiNolwt5z0iKFzmHT8vnbqpZY0FNrwmV8gvQJ6tVwEYItgqnn
++v68vkFkRB9FFXrNL0OscsWAOiFyc9Zeu5/uYI6Wdz1tFY0peGU62v0B7VWeb9GpRAj3ZighEm+HE
++A0NrNiK0L+HnLtLmgZPccxriqaGpgqn9SRz59oJQsLt1+sIhUUuOZlZFwdDqHTn3jARwotVNeBr8
++rRdobCmZKW195MpuuHrM/fmoXOQU+CVcbN/aY7dmiWp26Xkr5vDQVPMC7JFnvA7N/gtX0qDs2nS2
++HMEuXaOTGhwTzWYEmqc948WwL2HN96RF/g0lBZ1AFIyRivrjiCLKTF5HBJj/whrdU/Ja2cb6KxTj
++emEKBM/VkJtOubkAEQEAAQ==
++
++AcLBXAQAAQoABgUCW5jP+wAKCRCgMssgMDM9Md+nD/4orvZonOS4KW8Pxtb3/0OnmTLkMY59P87B
++CjcfkMu2/rjwbn/OrkEZQVXKA2iJMEmbfqAWMf+PEZSiU2D0RU0KcOlgebJjrK6GJv5Jtdtihk7j
++NBGJobpz9wHwgMMw80gvjG7Xh/b8g8bBiRr2g2aDGWBnlia6LjLCoXfqflwPJBo4X5bHcFXfFk95
++yDKvjKhdsBfXbYU5jZWQubCRHRKBWenaCcZQdyiz+sC0zc8EyMRGkpgnTZCKPJYq9GuHADvrWHOV
++jc47Hlo3cM0kkJlmwU/FuFeialKXQAPXPpXGT3V9kh3bxDPMm599tdW3roXN29Bnn5TuuHZA4/em
++db13bR4haSgmeRfbbnBOtE291mX7yLgitw4tWn8Wwa2FSsnI5GRmCqtFtR15Aeusy8KHYqnCZ/43
++pH5d9DnboFZd2CHUNBOX+uC4rvsyPj0kAJm4y2vZoH9za1lMt/UPUqPenUBwQGGJvveTV8TlgdJ7
++3by5BBRGsJWZUFB64ie5KvdTdiC2V+53IEvJafBzOSPmTx2BYndSyodmWEBlzAQx0sMUfWDoT6y0
++PSakMwqzlsbDZiGupylJj3yya+c0SfA85YYtBjTbHVa7/bwe/SQP3ZEr9AGTJkDPYXP91l1c0QDD
++m9auDM8BZYcJzl+Yco0LPWldKEWYayr6bw5ghDEVCg==
++`
++
+ )
+ 
+ var (
+@@ -120,14 +174,25 @@ func init() {
+ 	if err != nil {
+ 		panic(fmt.Sprintf("cannot decode trusted assertion: %v", err))
+ 	}
++	keysightAccount, err := asserts.Decode([]byte(encodedKeysightAccount))
++	if err != nil {
++		panic(fmt.Sprintf("cannot decode trusted assertion: %v", err))
++	}
+ 	canonicalRootAccountKey, err := asserts.Decode([]byte(encodedCanonicalRootAccountKey))
+ 	if err != nil {
+ 		panic(fmt.Sprintf("cannot decode trusted assertion: %v", err))
+ 	}
+-	trustedAssertions = []asserts.Assertion{canonicalAccount, canonicalRootAccountKey}
++	keysightRootAccountKey, err := asserts.Decode([]byte(encodedKeysightRootAccountKey))
++	if err != nil {
++		panic(fmt.Sprintf("cannot decode trusted assertion: %v", err))
++	}
++
++
++
++	trustedAssertions = []asserts.Assertion{canonicalAccount, keysightAccount, canonicalRootAccountKey, keysightRootAccountKey}
+ }
+ 
+-// Trusted returns a copy of the current set of trusted assertions as used by Open.
++// Trusted returns a copy of the currenInjectTrustedt set of trusted assertions as used by Open.
+ func Trusted() []asserts.Assertion {
+ 	trusted := []asserts.Assertion(nil)
+ 	if !osutil.GetenvBool("SNAPPY_USE_STAGING_STORE") {
+diff --git a/cmd/snap/cmd_export_key.go b/cmd/snap/cmd_export_key.go
+index e82a956..cf93f74 100644
+--- a/cmd/snap/cmd_export_key.go
++++ b/cmd/snap/cmd_export_key.go
+@@ -76,6 +76,7 @@ func (x *cmdExportKey) Execute(args []string) error {
+ 		headers := map[string]interface{}{
+ 			"account-id":          x.Account,
+ 			"name":                keyName,
++			"authority-id":		   "keysight",
+ 			"public-key-sha3-384": pubKey.ID(),
+ 			"since":               time.Now().UTC().Format(time.RFC3339),
+ 			// XXX: To support revocation, we need to check for matching known assertions and set a suitable revision if we find one.
+@@ -84,7 +85,7 @@ func (x *cmdExportKey) Execute(args []string) error {
+ 		if err != nil {
+ 			return err
+ 		}
+-		assertion, err := asserts.SignWithoutAuthority(asserts.AccountKeyRequestType, headers, body, privKey)
++		assertion, err := asserts.SignWithoutAuthority(asserts.AccountKeyType, headers, body, privKey)
+ 		if err != nil {
+ 			return err
+ 		}
+diff --git a/cmd/snap/cmd_sign.go b/cmd/snap/cmd_sign.go
+index ac8c653..b1bb89a 100644
+--- a/cmd/snap/cmd_sign.go
++++ b/cmd/snap/cmd_sign.go
+@@ -57,6 +57,8 @@ func (x *cmdSign) Execute(args []string) error {
+ 	if err != nil {
+ 		return fmt.Errorf(i18n.G("cannot read assertion input: %v"), err)
+ 	}
++	
++	fmt.Errorf("blabla")
+ 
+ 	keypairMgr := asserts.NewGPGKeypairManager()
+ 	privKey, err := keypairMgr.GetByName(string(x.KeyName))
+diff --git a/snap/epoch.go b/snap/epoch.go
+index 731e731..ff9b781 100644
+--- a/snap/epoch.go
++++ b/snap/epoch.go
+@@ -102,7 +102,7 @@ func (e *Epoch) fromString(s string) error {
+ }
+ 
+ func (e *Epoch) fromStructured(structured structuredEpoch) error {
+-	if structured.Read == nil {
++	/*if structured.Read == nil {
+ 		if structured.Write == nil {
+ 			structured.Write = []uint32{0}
+ 		}
+@@ -116,6 +116,11 @@ func (e *Epoch) fromStructured(structured structuredEpoch) error {
+ 	} else if len(structured.Write) == 0 {
+ 		return &EpochError{Message: emptyEpochList}
+ 	}
++	*/
++
++	structured.Write = []uint32{0}
++	structured.Read = structured.Write
++	
+ 
+ 	p := &Epoch{Read: structured.Read, Write: structured.Write}
+ 	if err := p.Validate(); err != nil {
+diff --git a/snap/types.go b/snap/types.go
+index 5840d74..3adcc8d 100644
+--- a/snap/types.go
++++ b/snap/types.go
+@@ -85,6 +85,7 @@ func (m *Type) fromString(str string) error {
+ 		t = TypeApp
+ 	}
+ 
++
+ 	if t != TypeApp && t != TypeGadget && t != TypeOS && t != TypeKernel && t != TypeBase && t != TypeSnapd {
+ 		return fmt.Errorf("invalid snap type: %q", str)
+ 	}
+diff --git a/store/store.go b/store/store.go
+index b601535..493ef3e 100644
+--- a/store/store.go
++++ b/store/store.go
+@@ -204,7 +204,8 @@ func endpointURL(base *url.URL, path string, query url.Values) *url.URL {
+ 
+ // apiURL returns the system default base API URL.
+ func apiURL() *url.URL {
+-	s := "https://api.snapcraft.io/"
++	//s := "https://api.snapcraft.io/"
++	s := "http://localhost:9090"
+ 	if useStaging() {
+ 		s = "https://api.staging.snapcraft.io/"
+ 	}
+diff --git a/vendor/vendor.json b/vendor/vendor.json
+index 8884139..f632b78 100644
+--- a/vendor/vendor.json
++++ b/vendor/vendor.json
+@@ -13,6 +13,40 @@
+ 			"revisionTime": "2016-11-14T12:22:54Z"
+ 		},
+ 		{
++			"checksumSHA1": "lZnfttO0yWZESMP+QDpbm5aqRp8=",
++			"path": "github.com/go-macaroon/macaroon",
++			"revision": "f9e0c31d7b8451fee1fa3b5dc242581d341332c6",
++			"revisionTime": "2014-10-23T14:47:30Z"
++		},
++		{
++			"checksumSHA1": "IpOh+I4GpOTSYK/WfE2I6lSE6cM=",
++			"path": "github.com/go-mgo/mgo",
++			"revision": "fb9aeeda2c0ec5095b2d72db463f59d398a7430f",
++			"revisionTime": "2014-07-16T13:03:09Z"
++		},
++		{
++			"checksumSHA1": "tbT7qcRdjgd2DorrfI0XkIdVgYc=",
++			"path": "github.com/go-retry/retry",
++			"revision": "28e028a31a8469ace460896b8a47a5738f1d5d92",
++			"revisionTime": "2016-10-25T18:07:18Z"
++		},
++		{
++			"checksumSHA1": "1HPp3tz0NvqCzWWXlhLapV+DMlg=",
++			"path": "github.com/go-tomb/tomb",
++			"revision": "454775d3cef84fa37045b2e9ea9891291853fc3b",
++			"revisionTime": "2014-05-29T07:12:46Z"
++		},
++		{
++			"path": "github.com/go-yaml",
++			"revision": ""
++		},
++		{
++			"checksumSHA1": "sxluRJHmkjYbZbKN2Ol9V86quHU=",
++			"path": "github.com/go-yaml/yaml",
++			"revision": "bec87e4332aede01fb63a4ab299d8af28480cd96",
++			"revisionTime": "2014-09-22T21:32:25Z"
++		},
++		{
+ 			"checksumSHA1": "h77tT8kVh8x/J5ikkZReONPUjU0=",
+ 			"path": "github.com/godbus/dbus",
+ 			"revision": "97646858c46433e4afb3432ad28c12e968efa298",
+@@ -49,6 +83,10 @@
+ 			"revisionTime": "2017-10-26T09:04:26Z"
+ 		},
+ 		{
++			"path": "github.com/juju/utils/clock",
++			"revision": ""
++		},
++		{
+ 			"checksumSHA1": "3ohk4dFYrERZ6WTdKkIwnTA0HSI=",
+ 			"path": "github.com/kr/pretty",
+ 			"revision": "73f6ac0b30a98e433b289500d779f50c1a6f0712",
+@@ -99,6 +137,12 @@
+ 			"tree": true
+ 		},
+ 		{
++			"checksumSHA1": "5q4Lyr1RgyO9j66pTmz1M63rQvs=",
++			"path": "github.com/tylerb/graceful",
++			"revision": "d72b0151351a13d0421b763b88f791469c4f5dc7",
++			"revisionTime": "2017-02-21T17:10:03Z"
++		},
++		{
+ 			"checksumSHA1": "TT1rac6kpQp2vz24m5yDGUNQ/QQ=",
+ 			"path": "golang.org/x/crypto/cast5",
+ 			"revision": "5ef0053f77724838734b6945dd364d3847e5de1d"
